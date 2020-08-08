@@ -46,10 +46,6 @@ setMembers([...members, newMember])
     </div>
     </div>
   );
-
-
-
-
 }
 
 export default App;
