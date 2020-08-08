@@ -40,7 +40,7 @@ setMembers([...members, newMember])
     <div className='team-members'>
       <ul>
         {members.map((member) => (
-          <li key={member.id}>{member}</li>
+          <li key={member.id}>{member.name}</li>
         ))}
       </ul>
     </div>
