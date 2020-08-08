@@ -23,14 +23,15 @@ function App() {
     role: 'Mechanic, Cutie-Pie'
   }])
 
+// Functionality to create a new member based on form input
 const addNewMember = member => {
   const newMember = {
-  id: Date.now(),
+  id: Date.now(), // Date.now creates a unique key
   name: member.name,
   email: member.email,
   role: member.role
 }
-setMembers([...members, newMember])
+setMembers([...members, newMember]) // Use spread (...) operator to append new member to the end of the existing array without mutating the original
 }
 
   return (
@@ -39,7 +40,7 @@ setMembers([...members, newMember])
       <Form addNewMember={addNewMember} />      
     <div className='team-members'>
       <ul>
-        {members.map((member) => (
+        {members.map((member) => ( // Map through array of team members and render their name
           <li key={member.id}>{member.name}</li>
         ))}
       </ul>
