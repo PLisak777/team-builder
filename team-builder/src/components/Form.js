@@ -2,17 +2,15 @@ import React, { useState } from 'react'
 
 const Form = props => {
 const [team, newTeam] = useState({
-    name: props.name, 
-    email: props.email,
-    role: props.role
+    name: '', 
+    email: '',
+    role: ''
 });
 
 // Make each new object append to the end of the team array and update value based on pairs
 const handleChange = event => {
     const newObj = {...team,
-        [event.target.name]: event.target.value,
-        [event.target.email]: event.target.value,
-        [event.target.role]: event.target.value}
+        [event.target.name]: event.target.value}
     newTeam(newObj)
 }
 
@@ -24,7 +22,7 @@ const submitForm = evt => {
         name: "",
         email: "",
         role: ""
-    }) // For some reason everything is clearing except the email field...
+    })
 }
 
     return (
@@ -46,7 +44,7 @@ const submitForm = evt => {
                     type='email'
                     placeholder='Enter your email'
                     name='email'
-                    value={team.value}
+                    value={team.email}
                     onChange={handleChange}
                     /> 
                 <br />
